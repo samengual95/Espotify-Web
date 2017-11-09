@@ -275,7 +275,7 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>Servlet Dejar de seguir usuario</servlet-name>
-        <servlet-class>Servlets.DejarDeSeguirUsuario</servlet-class>
+        <servlet-class>Servlets.dejarDeSeguirUsuario</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Servlet Dejar de seguir usuario</servlet-name>
