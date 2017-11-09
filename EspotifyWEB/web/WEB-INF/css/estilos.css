@@ -1,0 +1,16 @@
+header{
+    background: #2c3e50;
+    color:#fff;
+}
+footer{
+    background: #2c3e50;
+    color:#fff;
+}
+.boton{
+    background: #79A4CF;
+    border: none; /* Remove borders */
+    color: white; /* Add a text color */
+    padding: 14px 28px; /* Add some padding */
+    cursor: pointer; /* Add a pointer cursor on mouse-over */
+}
+.boton:hover{background:#2c3e50 }

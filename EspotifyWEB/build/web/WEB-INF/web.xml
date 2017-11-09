@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <!-- Servlet registrarse -->
+    <servlet>
+        <servlet-name>Servlet Registrarse</servlet-name>
+        <servlet-class>Servlets.Registrarse</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet Registrarse</servlet-name>
+        <url-pattern>/Registrarse</url-pattern>
+    </servlet-mapping>
+    <!-- Servlet crear lista -->
+    <servlet>
+        <servlet-name>Servlet Crear Lista</servlet-name>
+        <servlet-class>Servlets.CrearLista</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet Crear Lista</servlet-name>
+        <url-pattern>/crearLista</url-pattern>
+    </servlet-mapping>
+    <!-- Servlet direccionar crear lista -->
+    <servlet>
+        <servlet-name>Servlet Direccionar Crear</servlet-name>
+        <servlet-class>Servlets.DireccionarCrearLista</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet Direccionar Crear</servlet-name>
+        <url-pattern>/direccionarCrearLista</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Servlet Direccionar dejar de seguir</servlet-name>
+        <servlet-class>Servlets.DireccionarDejarDeSeguirUsuario</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet Direccionar dejar de seguir</servlet-name>
+        <url-pattern>/direccionarDejarDeSeguirUsuario</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Servlet Direccionar Alta album</servlet-name>
+        <servlet-class>Servlets.DireccionarAltaAlbum</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet Direccionar Alta album</servlet-name>
+        <url-pattern>/direccionarAltaAlbum</url-pattern>
+    </servlet-mapping>
+    <!-- Servlet consultar perfil -->
+    <servlet>
+        <servlet-name>Servlet consultarPerfil</servlet-name>
+        <servlet-class>Servlets.consultarPerfil</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet consultarPerfil</servlet-name>
+        <url-pattern>/consultarPerfil</url-pattern>
+    </servlet-mapping>
+    <!-- Servlet consultar perfil como invitado -->
+    <servlet>
+        <servlet-name>Servlet consultarPerfilComoInvitado</servlet-name>
+        <servlet-class>Servlets.consultarPerfilComoInvitado</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet consultarPerfilComoInvitado</servlet-name>
+        <url-pattern>/consultarPerfilComoInvitado</url-pattern>
+    </servlet-mapping>
+    <!-- Servlet login -->
+    <servlet>
+        <servlet-name>Servlet Login</servlet-name>
+        <servlet-class>Servlets.Login</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet Login</servlet-name>
+        <url-pattern>/Login</url-pattern>
+    </servlet-mapping>
+    <!-- Servlet home -->
+    <servlet>
+        <servlet-name>Servlet Home</servlet-name>
+        <servlet-class>Servlets.Home</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet Home</servlet-name>
+        <url-pattern>/Home</url-pattern>
+    </servlet-mapping>
+    <!-- Servlet completar registro -->
+    <servlet>
+        <servlet-name>Servlet Completar_Registro</servlet-name>
+        <servlet-class>Servlets.Completar_Registro</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet Completar_Registro</servlet-name>
+        <url-pattern>/Completar_Registro</url-pattern>
+    </servlet-mapping>
+    <!--- Servlet cerrar sesion -->
+    <servlet>
+        <servlet-name>Servlet CerrarSesion</servlet-name>
+        <servlet-class>Servlets.CerrarSesion</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet CerrarSesion</servlet-name>
+        <url-pattern>/cerrarSesion</url-pattern>
+    </servlet-mapping>
+    <!-- Servlet agregar tema lista -->
+    <servlet>
+        <servlet-name>Servlet Agregar tema lista</servlet-name>
+        <servlet-class>Servlets.AgregarTemaLista</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet Agregar tema lista</servlet-name>
+        <url-pattern>/agregarTemaLista</url-pattern>
+    </servlet-mapping>
+    <!-- Servlet direccionar agregar tema lista -->
+    <servlet>
+        <servlet-name>Servlet Direccionar agregar tema lista</servlet-name>
+        <servlet-class>Servlets.DireccionarAgregarTemaLista</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet Direccionar agregar tema lista</servlet-name>
+        <url-pattern>/direccionarAgregarTemaLista</url-pattern>
+    </servlet-mapping>
+    <!-- Servlet publicar lista -->
+    <servlet>
+        <servlet-name>Servlet Publicar lista</servlet-name>
+        <servlet-class>Servlets.PublicarLista</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet Publicar lista</servlet-name>
+        <url-pattern>/publicarLista</url-pattern>
+    </servlet-mapping>
+    <!-- Servlet direccionar publicar lista -->
+    <servlet>
+        <servlet-name>Servlet Direccionar publicar lista</servlet-name>
+        <servlet-class>Servlets.DireccionarPublicarLista</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet Direccionar publicar lista</servlet-name>
+        <url-pattern>/direccionarPublicarLista</url-pattern>
+    </servlet-mapping>
+    <!-- Servlet consultar lista genero-->
+    <servlet>
+        <servlet-name>Servlet Consultar lista genero</servlet-name>
+        <servlet-class>Servlets.ConsultarListaGenero</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet Consultar lista genero</servlet-name>
+        <url-pattern>/consultarListaGenero</url-pattern>
+    </servlet-mapping>
+    <!-- Servlet consultar lista cliente-->
+    <servlet>
+        <servlet-name>Servlet Consultar lista cliente</servlet-name>
+        <servlet-class>Servlets.ConsultarListaCliente</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet Consultar lista cliente</servlet-name>
+        <url-pattern>/consultarListaCliente</url-pattern>
+    </servlet-mapping>
+    <!-- Servlet traer datos consultar lista -->
+    <servlet>
+        <servlet-name>Servlet Datos consultar lista</servlet-name>
+        <servlet-class>Servlets.traerDatosConsultarLista</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet Datos consultar lista</servlet-name>
+        <url-pattern>/datosConsultarLista</url-pattern>
+    </servlet-mapping>
+    <!-- Servlet direccionar consultar lista -->
+    <servlet>
+        <servlet-name>Servlet Direccionar consultar lista</servlet-name>
+        <servlet-class>Servlets.DireccionarConsultarLista</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet Direccionar consultar lista</servlet-name>
+        <url-pattern>/direccionarConsultarLista</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Servlet Direccionar guardar favorito</servlet-name>
+        <servlet-class>Servlets.DireccionarGuardarEnFavoritos</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet Direccionar guardar favorito</servlet-name>
+        <url-pattern>/direccionarGuardarEnFavoritos</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Servlet Direccionar seguir usuario</servlet-name>
+        <servlet-class>Servlets.DireccionarSeguirUsuario</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet Direccionar seguir usuario</servlet-name>
+        <url-pattern>/direccionarSeguirUsuario</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Servlet Direccionar consultar album</servlet-name>
+        <servlet-class>Servlets.DireccionarConsultarAlbum</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet Direccionar consultar album</servlet-name>
+        <url-pattern>/direccionarConsultarAlbum</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Servlet Direccionar contratar suscripcion</servlet-name>
+        <servlet-class>Servlets.DireccionarContratarSuscripcion</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet Direccionar contratar suscripcion</servlet-name>
+        <url-pattern>/direccionarContratarSuscripcion</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Servlet Direccionar actualizar suscripcion</servlet-name>
+        <servlet-class>Servlets.DireccionarActualizarSuscripcion</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet Direccionar actualizar suscripcion</servlet-name>
+        <url-pattern>/direccionarActualizarSuscripcion</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Servlet Alta Album</servlet-name>
+        <servlet-class>Servlets.AltaAlbum</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet Alta Album</servlet-name>
+        <url-pattern>/AltaAlbum</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Servlet Confirmar Suscripcion</servlet-name>
+        <servlet-class>Servlets.ConfirmarSuscripcion</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet Confirmar Suscripcion</servlet-name>
+        <url-pattern>/ConfirmarSuscripcion</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Servlet Contratar Suscripcion</servlet-name>
+        <servlet-class>Servlets.ContratarSuscripcion</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet Contratar Suscripcion</servlet-name>
+        <url-pattern>/ContratarSuscripcion</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Servlet Guardar album favorito</servlet-name>
+        <servlet-class>Servlets.GuardarAlbumFavorito</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet Guardar album favorito</servlet-name>
+        <url-pattern>/GuardarAlbumFavorito</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Servlet Guardar lista personalizada favorito</servlet-name>
+        <servlet-class>Servlets.GuardarListaPersonalizadaFavorito</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet Guardar lista personalizada favorito</servlet-name>
+        <url-pattern>/GuardarListaPersonalizadaFavorito</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Servlet Guardar lista por defecto favorito</servlet-name>
+        <servlet-class>Servlets.GuardarListaPorDefectoFavorito</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet Guardar lista por defecto favorito</servlet-name>
+        <url-pattern>/GuardarListaPorDefectoFavorito</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Servlet Guardar tema favorito</servlet-name>
+        <servlet-class>Servlets.GuardarTemaFavorito</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet Guardar tema favorito</servlet-name>
+        <url-pattern>/GuardarTemaFavorito</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Servlet Seguir usuario</servlet-name>
+        <servlet-class>Servlets.SeguirUsuario</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet Seguir usuario</servlet-name>
+        <url-pattern>/SeguirUsuario</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Servlet Dejar de seguir usuario</servlet-name>
+        <servlet-class>Servlets.DejarDeSeguirUsuario</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet Dejar de seguir usuario</servlet-name>
+        <url-pattern>/dejarDeSeguirUsuario</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Servlet Generos album</servlet-name>
+        <servlet-class>Servlets.generosAlbum</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet Generos album</servlet-name>
+        <url-pattern>/generosAlbum</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Servlet Tipo favorito</servlet-name>
+        <servlet-class>Servlets.tipoFavorito</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet Tipo favorito</servlet-name>
+        <url-pattern>/tipoFavorito</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Servlet Completar alta album</servlet-name>
+        <servlet-class>Servlets.completarAltaAlbum</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet Completar alta album</servlet-name>
+        <url-pattern>/completarAltaAlbum</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Servlet Completar alta album2</servlet-name>
+        <servlet-class>Servlets.completarAltaAlbum2</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet Completar alta album2</servlet-name>
+        <url-pattern>/completarAltaAlbum2</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Servlet Completar alta album3</servlet-name>
+        <servlet-class>Servlets.completarAltaAlbum3</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet Completar alta album3</servlet-name>
+        <url-pattern>/completarAltaAlbum3</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Servlet Actualizar estado suscripcion</servlet-name>
+        <servlet-class>Servlets.actualizarEstadoSuscripcion</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet Actualizar estado suscripcion</servlet-name>
+        <url-pattern>/actualizarEstadoSuscripcion</url-pattern>
+    </servlet-mapping>
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+    <session-config>
+        <session-timeout>
+            5
+        </session-timeout>
+    </session-config>
+</web-app>
