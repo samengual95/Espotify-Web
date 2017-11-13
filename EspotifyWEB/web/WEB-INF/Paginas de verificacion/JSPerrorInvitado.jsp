@@ -1,4 +1,3 @@
-<%@page import="dataType.DtCliente"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -25,6 +24,13 @@
                 cursor: pointer; /* Add a pointer cursor on mouse-over */
             }
             .boton:hover{background:#2c3e50 }
+            .menu{
+                background: #2c3e50;
+                color: aliceblue;
+                position: fixed;
+                bottom: 0;
+                top: 0;
+            }
             .nodomenu{
                 list-style: none;
                 padding: 0;
@@ -45,10 +51,6 @@
     </head>
     <body>
         <header>
-            <%
-                DtCliente u = (DtCliente) session.getAttribute("usuario_logueado");
-                String nick = u.getNick();
-            %>
             <div class="container">
                 <section class="main row">
                     <aside class="col-md-10">
@@ -56,23 +58,17 @@
                     </aside>
                     <aside class="col-md-2">
                         <ul class="nodomenu">
-                            <a href="consultarPerfil"><li><% out.print(nick); %></li></a>
+                            <li>Invitado </li>
                             <a href="cerrarSesion"><li>Cerrar sesion</li></a>
                         </ul>
                     </aside>
             </div>
         </header>
         <div class="container">
-            <p><h2>Agregue temas a sus listas de reproducción</h2><br></p>
-            <form action="agregarTemaLista" method="POST">
-                <p><input type="text" name="nombreLista" placeholder="Nombre de lista" required></p>
-                <p><input type="text" name="artista" placeholder="Nombre del artista" required></p>
-                <p><input type="text" name="album" placeholder="Nombre del album" required></p>
-                <p><input type="text" name="tema" placeholder="Numero del tema" required></p>
-                <p>
-                    <input type="button" class="boton" value="Agregar tema" onclick="submit()">
-                    <input type="reset" class="boton" value="Limpiar formulario">
-                </p>
+            <p><h2>Un invitado no tiene acceso a este elemento!</h2><br></p>
+            <form action="Home" method="POST">
+                <input type="button" class="boton" name="boton1" value="Continuar" onclick="submit()">
+            </form>
         </div>
         <footer>
             <div class="container">

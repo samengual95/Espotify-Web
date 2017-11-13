@@ -47,6 +47,7 @@
         <header>
             <%
                 DtCliente u = (DtCliente) session.getAttribute("usuario_logueado");
+                String mensajeError = (String) session.getAttribute("mensaje_error");
                 String nick = u.getNick();
             %>
             <div class="container">
@@ -56,7 +57,7 @@
                     </aside>
                     <aside class="col-md-2">
                         <ul class="nodomenu">
-                            <a href="consultarPerfil"><li><% out.print(nick); %></li></a>
+                            <a href="consultarPerfil"><li><% out.print(nick);%></li></a>
                             <a href="cerrarSesion"><li>Cerrar sesion</li></a>
                         </ul>
                     </aside>
@@ -64,6 +65,21 @@
         </header>
         <div class="container">
             <p><h2>Agregue temas a sus listas de reproducción</h2><br></p>
+            <table width="280" cellspacing="1" cellpadding="3" border="0" bgcolor="#1E679A"> 
+                <tr> 
+                    <td><font color="#FFFFFF" face="arial, verdana, helvetica"> 
+                        <b>Se ha producido un error!</b> 
+                        </font></td> 
+                </tr> 
+                <tr> 
+                    <td bgcolor="#ffffcc"> 
+                        <font face="arial, verdana, helvetica"> 
+                        <% out.print(mensajeError); %>
+                        </font> 
+                    </td> 
+                </tr> 
+            </table>
+            <br>
             <form action="agregarTemaLista" method="POST">
                 <p><input type="text" name="nombreLista" placeholder="Nombre de lista" required></p>
                 <p><input type="text" name="artista" placeholder="Nombre del artista" required></p>

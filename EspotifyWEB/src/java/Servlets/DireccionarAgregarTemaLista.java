@@ -1,5 +1,6 @@
 package Servlets;
 
+import static Servlets.Home.getEstado;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -23,9 +24,18 @@ public class DireccionarAgregarTemaLista extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        // Redirije al JSPagregarTemaLista
-        response.setContentType("text/html;charset=UTF-8");
-        request.getRequestDispatcher("/WEB-INF/Agregar tema Lista/JSPagregarTemaLista.jsp").forward(request,response);
+        switch(getEstado(request)){
+                case NO_LOGIN:
+                    request.getRequestDispatcher("/WEB-INF/Home/JSPinicio.jsp").forward(request,response);
+                    break;
+                case LOGIN_CORRECTO:
+                    response.setContentType("text/html;charset=UTF-8");
+                    request.getRequestDispatcher("/WEB-INF/Agregar tema Lista/JSPagregarTemaListaAlbum.jsp").forward(request,response);
+                    break;
+                case LOGIN_INVITADO:
+                    request.getRequestDispatcher("/WEB-INF/Paginas de verificacion/JSPerrorInvitado.jsp").forward(request,response);
+                    break;
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
