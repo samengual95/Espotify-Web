@@ -5,14 +5,22 @@
             <url>web/WEB-INF/web.xml</url>
             <bookmark id="1">
                 <name/>
-                <line>338</line>
+                <line>363</line>
                 <key/>
             </bookmark>
         </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Clara/Documents/NetBeansProjects/Espotify-Web/EspotifyWEB/src/java/Servlets/SeguirUsuario.java</file>
+            <file>file:/C:/Users/Clara/Documents/NetBeansProjects/Espotify-Web/EspotifyWEB/src/java/Servlets/ConsultaAlbum2.java</file>
+            <file>file:/C:/Users/Clara/Documents/NetBeansProjects/Espotify-Web/EspotifyWEB/web/WEB-INF/Home/JSPprincipalCliente.jsp</file>
+            <file>file:/C:/Users/Clara/Documents/NetBeansProjects/Espotify-Web/EspotifyWEB/web/WEB-INF/ConsultarAbum/JSPconsultarAlbum1.jsp</file>
+            <file>file:/C:/Users/Clara/Documents/NetBeansProjects/Espotify-Web/EspotifyWEB/src/java/Servlets/ConsultaAlbum3.java</file>
+            <file>file:/C:/Users/Clara/Documents/NetBeansProjects/Espotify-Web/EspotifyWEB/web/WEB-INF/ConsultarAbum/JSPconsultarAlbumDatosAlbum.jsp</file>
+            <file>file:/C:/Users/Clara/Documents/NetBeansProjects/Espotify-Web/EspotifyWEB/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/Clara/Documents/NetBeansProjects/Espotify-Web/EspotifyWEB/web/WEB-INF/ConsultarPerfil/ConsultarPerfilInvitado.jsp</file>
+            <file>file:/C:/Users/Clara/Documents/NetBeansProjects/Espotify-Web/EspotifyWEB/web/WEB-INF/ConsultarAbum/JSPconsultarAlbum.jsp</file>
+            <file>file:/C:/Users/Clara/Documents/NetBeansProjects/Espotify-Web/EspotifyWEB/src/java/Servlets/ConsultaAlbum1.java</file>
         </group>
     </open-files>
 </project-private>

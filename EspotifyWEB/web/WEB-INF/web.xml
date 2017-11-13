@@ -329,6 +329,31 @@
         <servlet-name>Servlet Actualizar estado suscripcion</servlet-name>
         <url-pattern>/actualizarEstadoSuscripcion</url-pattern>
     </servlet-mapping>
+     <!-- Servlet registrarse -->
+    <servlet>
+        <servlet-name>Servlet Consultar Album1</servlet-name>
+        <servlet-class>Servlets.ConsultaAlbum1</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet Consultar Album1</servlet-name>
+        <url-pattern>/consultaAlbumDir</url-pattern>
+    </servlet-mapping>
+     <servlet>
+        <servlet-name>Servlet Consultar Album2</servlet-name>
+        <servlet-class>Servlets.ConsultaAlbum2</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet Consultar Album2</servlet-name>
+        <url-pattern>/consultarAlbum</url-pattern>
+    </servlet-mapping>
+     <servlet>
+        <servlet-name>Servlet Consultar Album3</servlet-name>
+        <servlet-class>Servlets.ConsultaAlbum3</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Servlet Consultar Album3</servlet-name>
+        <url-pattern>/consultarAlbumDatosAlbum</url-pattern>
+    </servlet-mapping>
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>
     </welcome-file-list>

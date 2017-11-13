@@ -26,35 +26,35 @@ import javax.servlet.http.HttpSession;
  */
 public class SeguirUsuario extends HttpServlet {
 
-
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-            HttpSession session = request.getSession();
-            Fabrica fabrica = Fabrica.getInstance();
-            Interfaz sistema = fabrica.getInterfaz();
-            DtCliente cl = (DtCliente) session.getAttribute("usuario_logueado");
-            String seguido = (String) request.getParameter("mailnickSeguido");
-            Usuario u = sistema.buscarUsuario(cl.getNick());
-            if (u == null) {
+        HttpSession session = request.getSession();
+        Fabrica fabrica = Fabrica.getInstance();
+        Interfaz sistema = fabrica.getInterfaz();
+        DtCliente cl = (DtCliente) session.getAttribute("usuario_logueado");
+        String seguido = (String) request.getParameter("mailnickSeguido");
+        Usuario u = sistema.buscarUsuario(cl.getNick());
+        if (u == null) {
+            request.getRequestDispatcher("/WEB-INF/Paginas de verificacion/JSPerror.jsp").forward(request, response);
+        } else {
+            if (u instanceof Cliente) {
+                Cliente c = (Cliente) u;
+                ArrayList<Suscripciones> l = sistema.listarSuscripciones(c.getNick());
+                Suscripciones s;
+                Iterator<Suscripciones> it = l.iterator();
+                while (it.hasNext()) {
+                    s = it.next();
+                    if (s.getEstado().equals("Pendiente")) {
+                        sistema.seguirUsuario(c.getNick(), seguido);
+                        request.getRequestDispatcher("/WEB-INF/Paginas de verificacion/JSPcorrecto.jsp").forward(request, response);
+                    }
+                }
                 request.getRequestDispatcher("/WEB-INF/Paginas de verificacion/JSPerror.jsp").forward(request, response);
             } else {
-                if (u instanceof Cliente) {
-                    Cliente c = (Cliente) u;
-                    ArrayList<Suscripciones> l = sistema.listarSuscripciones(c.getNick());
-                    Suscripciones s;
-                    Iterator<Suscripciones> it = l.iterator();
-                    while (it.hasNext()) {
-                        s = it.next();
-                        if (s.getEstado().equals("Pendiente")) {
-                            sistema.seguirUsuario(c.getNick(), seguido);
-                            request.getRequestDispatcher("/WEB-INF/Paginas de verificacion/JSPcorrecto.jsp").forward(request, response);
-                        }
-                    }
-                    request.getRequestDispatcher("/WEB-INF/Paginas de verificacion/JSPerror.jsp").forward(request, response);
-                } else 
-                    request.getRequestDispatcher("/WEB-INF/Paginas de verificacion/JSPerror.jsp").forward(request, response);
+                request.getRequestDispatcher("/WEB-INF/Paginas de verificacion/JSPerror.jsp").forward(request, response);
             }
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

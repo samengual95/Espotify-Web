@@ -1,12 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Servlets;
 
-
-
+import static Servlets.Home.getEstado;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -30,8 +24,18 @@ public class DireccionarSeguirUsuario extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        request.getRequestDispatcher("/WEB-INF/SeguirUsuario/JSPseguirUsuario.jsp").forward(request,response);
+        switch(getEstado(request)){
+                case NO_LOGIN:
+                    request.getRequestDispatcher("/WEB-INF/Home/JSPinicio.jsp").forward(request,response);
+                    break;
+                case LOGIN_CORRECTO:
+                    response.setContentType("text/html;charset=UTF-8");
+                    request.getRequestDispatcher("/WEB-INF/SeguirUsuario/JSPseguirUsuario.jsp").forward(request,response);
+                    break;
+                case LOGIN_INVITADO:
+                    request.getRequestDispatcher("/WEB-INF/Paginas de verificacion/JSPerrorInvitado.jsp").forward(request,response);
+                    break;
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -46,9 +46,8 @@
     <body>
         <header>
             <%
-                DtCliente u = (DtCliente) request.getSession().getAttribute("usuario_logueado");
+                DtCliente u = (DtCliente) session.getAttribute("usuario_logueado");
                 String nick = u.getNick();
-                // Se debera controlar el estado de suscripcion, de ser adecuado se seguira, de lo contrario se debera redirigir 
             %>
             <div class="container">
                 <section class="main row">
