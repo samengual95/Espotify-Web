@@ -44,9 +44,9 @@ public class AltaAlbum extends HttpServlet {
             if (verificar)
                 request.getRequestDispatcher("/WEB-INF/AltaAlbum/JSPgenerosAlbum.jsp").forward(request,response);
             else
-                request.getRequestDispatcher("/WEB-INF/Paginas de verificacion/JSPerror.jsp").forward(request,response);
+                request.getRequestDispatcher("/WEB-INF/Paginas de verificacion/JSPerrorArtista.jsp").forward(request,response);
             } catch (NullPointerException e) {
-                    request.getRequestDispatcher("/WEB-INF/Home/JSPinicioErroneo.jsp").forward(request,response);
+                    request.getRequestDispatcher("/WEB-INF/Paginas de verificacion/JSPerrorArtista.jsp").forward(request,response);
             }
 
     }

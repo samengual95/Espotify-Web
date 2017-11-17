@@ -7,6 +7,7 @@ package Servlets;
 
 import clases.Artista;
 import clases.Fabrica;
+import clases.Tema;
 import clases.Usuario;
 import dataType.DtAlbum;
 import dataType.DtArtista;
@@ -41,11 +42,11 @@ public class completarAltaAlbum3 extends HttpServlet {
             String anioCreacion = (String) session.getAttribute("anioCreacion");
             ArrayList<DtTema> temas = (ArrayList<DtTema>) session.getAttribute("listaTemas");
             ArrayList<String> generos = (ArrayList<String>) session.getAttribute("generosAlbum");
-            DtAlbum al = new DtAlbum(nombreAl, Integer.parseInt(anioCreacion), temas, ar.getNombre(), generos, null);
+            DtAlbum al = new DtAlbum(nombreAl, Integer.parseInt(anioCreacion), temas , ar.getNick(), generos, null);
             sistema.altaAlbum(al);
-            request.getRequestDispatcher("/WEB-INF/Paginas de verificacion/JSPcorrecto.jsp").forward(request,response);
+            request.getRequestDispatcher("/WEB-INF/Paginas de verificacion/JSPcorrectoArtista.jsp").forward(request,response);
         } catch (NullPointerException e) {
-                    request.getRequestDispatcher("/WEB-INF/Paginas de verificacion/JSPerror.jsp").forward(request,response);
+                    request.getRequestDispatcher("/WEB-INF/Paginas de verificacion/JSPerrorArtista.jsp").forward(request,response);
         }
 
     }
