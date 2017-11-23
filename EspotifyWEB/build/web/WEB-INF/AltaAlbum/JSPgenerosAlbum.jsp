@@ -77,15 +77,12 @@
                 String s;
                 while(it.hasNext()){
                     s =(String) it.next(); %>
-                    <input type="radio" name= "seleccionarGenero" value="<% s.toString(); %>"> <% out.print(s);%></br> 
+                    <h2><input type="checkbox" name= "seleccionarGenero" value="<% s.toString(); %>"> <% out.print(s);%></h2></br> 
                  <%}%>
                 <p>
-                    <input type="button" class="boton" value="AgregarGenero" onclick="submit()">
+                    <input type="button" class="boton" value="Continuar" onclick="submit()">
                 </p>
-            <p>
-            <form action="completarAltaAlbum" method="POST">
-                <input type="button" class="boton" value="continuar" onclick="submit()"
-            </p>
+            </form>
         </div>
         <footer>
             <div class="container">

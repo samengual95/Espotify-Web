@@ -1,3 +1,4 @@
+<%@page import="dataType.DtArtista"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.Iterator"%>
@@ -51,7 +52,7 @@
     <body>
         <header>
             <%
-                DtCliente u = (DtCliente) request.getSession().getAttribute("usuario_logueado");
+                DtArtista u = (DtArtista) request.getSession().getAttribute("usuario_logueado");
                 String nick = u.getNick();
                 // Se debera controlar el estado de suscripcion, de ser adecuado se seguira, de lo contrario se debera redirigir 
             %>
@@ -76,9 +77,11 @@
                 <p><input type="text" name="ubicacionTema" placeholder="Ubicacion en el album"></p>
                 <input type="button" class="boton" value="AgregarTema" onclick="submit()">
                 <p>
-                <form action="completarAltaAlbum3" method="POST">
+            </form>
+            <form action="completarAltaAlbum3" method="POST">
                     <input type="button" class="boton" value="continuar" onclick="submit()"
                 </p>
+            </form>
         </div>
         <footer>
             <div class="container">
