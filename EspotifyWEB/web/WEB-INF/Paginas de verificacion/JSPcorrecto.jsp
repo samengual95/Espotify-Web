@@ -25,6 +25,29 @@
                 cursor: pointer; /* Add a pointer cursor on mouse-over */
             }
             .boton:hover{background:#2c3e50 }
+            .menu{
+                background: #2c3e50;
+                color: aliceblue;
+                position: fixed;
+                bottom: 0;
+                top: 0;
+            }
+            .nodomenu{
+                list-style: none;
+                padding: 0;
+            }
+            .nodomenu a li{
+                background: #2c3e50;
+                padding: 5px;
+                margin: 0 0 1px 0;
+            }
+            .nodomenu a li:hover{
+                background: #213141;
+            }
+            .nodomenu a{
+                color: aliceblue;
+                text-decoration: none;
+            }
         </style>
     </head>
     <body>
@@ -40,11 +63,13 @@
                     </aside>
                     <aside class="col-md-2">
                         <ul class="nodomenu">
-                            <a href="consultarPerfil"><li><% out.print(nick); %></li></a>
+                            <a href="consultarPerfil"><li><% out.print(nick);%></li></a>
                             <a href="cerrarSesion"><li>Cerrar sesion</li></a>
                         </ul>
                     </aside>
+                </section>
             </div>
+        </header>
         <div class="container">
             <p><h2>Se realizo el caso correctamente</h2><br></p>
             <form action="Home" method="POST">

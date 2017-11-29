@@ -37,7 +37,6 @@
                 <h1>Espotify</h1>
             </div>
         </header>
-        
         <p><h2>Consultar Perfil</h2><br></p>
         <form action="consultarPerfilComoInvitado" method="POST">   
             <aside class="col-md-6">

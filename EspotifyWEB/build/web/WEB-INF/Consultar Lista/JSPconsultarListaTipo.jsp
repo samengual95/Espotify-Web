@@ -35,7 +35,7 @@
         <div class="container">
             <section class="main row">
                 <aside class="col-md-6">
-                    <form action="datosConsultarLista" method="POST">
+                    <form action="TraerDatosConsultarLista" method="POST">
                         <p>
                             <label><input type="radio" name="consultarListaTipo" value="cliente" required> Por cliente</label><br>
                             <label><input type="radio" name="consultarListaTipo" value="genero" required> Por Genero</label><br>

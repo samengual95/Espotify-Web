@@ -1,3 +1,5 @@
+<%@page import="java.util.Iterator"%>
+<%@page import="java.util.ArrayList"%>
 <%@page import="dataType.DtListaReproduccionDefecto"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,13 +36,16 @@
             </div>
         </header>
         <div class="container">
-            <p><h2>Consultar Perfil</h2><br></p>
-            <form method="POST">   
-                
-                <!-- Se deben listar las listas que trae la session en el parametro listas-->
-                
-            </form>
+            <p><h2>Lista de generos registrados</h2><br></p>
             <form action="consultarListaGenero" method="POST">
+                <% ArrayList<String> generos = (ArrayList<String>) request.getSession().getAttribute("listas");%>
+                <% Iterator<String> it=generos.iterator();
+                String g;
+                while(it.hasNext()){
+                    g= it.next(); %>
+                    <input type="radio" name= "consultarListaGenero" value= "<% out.print(g);%>"> <% out.print(g);%></br> 
+                 <%}%>  
+                <!-- Se deben listar las listas que trae la session en el parametro listas-->
                 <input type="button" class="boton" value="Continuar" onclick="submit()">
             </form>
         </div>

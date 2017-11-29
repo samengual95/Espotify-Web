@@ -1,3 +1,5 @@
+<%@page import="java.util.Iterator"%>
+<%@page import="java.util.List"%>
 <%@page import="dataType.DtListaReproduccionDefecto"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,13 +36,16 @@
             </div>
         </header>
         <div class="container">
-            <p><h2>Consultar Perfil</h2><br></p>
-            <form method="POST">   
-                
-                <!-- Se deben listar las listas que trae la session en el parametro listas-->
-                
-            </form>
+            <h2>Clientes</h2> <br>
             <form action="consultarListaCliente" method="POST">
+                <% List<String> cli = (List<String>) request.getSession().getAttribute("clientes"); 
+                    Iterator<String> it = cli.iterator();
+                    String s;
+                    while(it.hasNext()){
+                        s = it.next();%>
+                        <input type="radio" name="Clientes" value="<% out.print(s); %>"> <% out.print(s); %><br>
+                <%}%>
+                <br>
                 <input type="button" class="boton" value="Continuar" onclick="submit()">
             </form>
         </div>
