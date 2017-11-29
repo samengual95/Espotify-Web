@@ -1,13 +1,18 @@
 package Servlets;
 
+import clases.Cliente;
 import clases.Fabrica;
+import clases.Usuario;
 import dataType.DtPertenece;
 import interfaz.Interfaz;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -27,9 +32,16 @@ public class ConsultarListaCliente extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        // El JSP listar listas debe pasar a este servlet el nombre de la lista que se quiere consultar
-        Fabrica fabrica = Fabrica.getInstance();
-        Interfaz sistema = fabrica.getInterfaz();
+            HttpSession sesion = request.getSession();
+            String nick = (String) request.getParameter("Clientes");
+            Fabrica fabrica = Fabrica.getInstance();
+            Interfaz sistema = fabrica.getInterfaz();
+            Usuario u = sistema.buscarUsuario(nick);
+            Cliente c = (Cliente) u;
+            ArrayList<String> s = c.darListasPersonalizadas();
+            sesion.setAttribute("listasper", s);
+            sesion.setAttribute("nick", nick);
+            request.getRequestDispatcher("/WEB-INF/Consultar Lista/JSPlistasCliente.jsp").forward(request, response);
         // Se crea el datatype y se le pasa a la funcion para que traiga los datos de la lista
         // Tanto el nombre de usuario como el nombre de la lista se traen desde el JSP
 //        DtPertenece LR = new DtPertenece(nombreLista, nombreUsuario);

@@ -68,7 +68,7 @@
             <form action="publicarLista" method="POST">
                 <p><input type="text" name="nombreListaPublicar" placeholder="Lista a publicar" required></p>
                 <p>
-                    <input type="button" class="boton" value="Registrar" onclick="submit()">
+                    <input type="button" class="boton" value="Publicar" onclick="submit()">
                     <input type="reset" class="boton" value="Limpiar formulario">
                 </p>
         </div>

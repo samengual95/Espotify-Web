@@ -1,9 +1,11 @@
 package Servlets;
 
 import clases.Fabrica;
+import clases.Genero;
 import interfaz.Interfaz;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -29,22 +31,20 @@ public class TraerDatosConsultarLista extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession();
-        String tipo = request.getParameter("consultarListaTipo");
+        String tipo = (String) request.getParameter("consultarListaTipo");
         Fabrica fabrica = Fabrica.getInstance();
         Interfaz sistema = fabrica.getInterfaz();
         // Se procede a traer una listas de listas del sistema, ya sea una lista de las listas de todos los generos o de todos los clientes
         if(tipo.equals("cliente")){
-//            ArrayList<String> listas = sistema.listarListasCliente();
-//            request.setAttribute("listas", listas);
+            List<String> cli = sistema.listarClientes();
+            session.setAttribute("clientes", cli);
             request.getRequestDispatcher("/WEB-INF/Consultar Lista/JSPlistarListasCliente.jsp").forward(request,response);
         } else{
-//            ArrayList<String> listas = sistema.listarListasGenero();
-//            request.setAttribute("listas", listas);
+            ArrayList<String> listas = sistema.listarGenero();
+            session.setAttribute("listas", listas);
             request.getRequestDispatcher("/WEB-INF/Consultar Lista/JSPlistarListasGenero.jsp").forward(request,response);
         }
         // No se si los dispacher llevan a un lugar diferente o no, ya que ambos llevan una lista de String
-        
-
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

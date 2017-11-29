@@ -5,17 +5,27 @@
             <url>web/WEB-INF/web.xml</url>
             <bookmark id="1">
                 <name/>
-                <line>338</line>
+                <line>358</line>
                 <key/>
             </bookmark>
         </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Leandro/Documents/NetBeansProjects/Kraken/Adelanto/Espotify-Web/EspotifyWEB/web/WEB-INF/Home/JSPprincipalCliente.jsp</file>
-            <file>file:/C:/Users/Leandro/Documents/NetBeansProjects/Kraken/Adelanto/Espotify-Web/EspotifyWEB/src/java/Servlets/AgregarTemaLista.java</file>
-            <file>file:/C:/Users/Leandro/Documents/NetBeansProjects/Kraken/Adelanto/Espotify-Web/EspotifyWEB/src/java/Servlets/Home.java</file>
-            <file>file:/C:/Users/Leandro/Documents/NetBeansProjects/Kraken/Adelanto/Espotify-Web/EspotifyWEB/web/WEB-INF/Agregar%20tema%20Lista/JSPagregarTemaListaAlbum.jsp</file>
+            <file>file:/C:/Users/Santi/Documents/NetBeansProjects/Espotify-Web/EspotifyWEB/src/java/Servlets/ConsultarListaGenero.java</file>
+            <file>file:/C:/Users/Santi/Documents/NetBeansProjects/Espotify-Web/EspotifyWEB/web/WEB-INF/Consultar%20Lista/JSPdatosListaGenero.jsp</file>
+            <file>file:/C:/Users/Santi/Documents/NetBeansProjects/Espotify-Web/EspotifyWEB/web/WEB-INF/Consultar%20Lista/JSPlistarListasCliente.jsp</file>
+            <file>file:/C:/Users/Santi/Documents/NetBeansProjects/Espotify-Web/EspotifyWEB/web/WEB-INF/Consultar%20Lista/JSPlistasCliente.jsp</file>
+            <file>file:/C:/Users/Santi/Documents/NetBeansProjects/Espotify-Web/EspotifyWEB/src/java/Servlets/ConsultarListaCliente.java</file>
+            <file>file:/C:/Users/Santi/Documents/NetBeansProjects/Espotify-Web/EspotifyWEB/web/WEB-INF/Consultar%20Lista/JSPconsultarListaTipo.jsp</file>
+            <file>file:/C:/Users/Santi/Documents/NetBeansProjects/Espotify-Web/EspotifyWEB/web/WEB-INF/Consultar%20Lista/JSPdatosListaCliente.jsp</file>
+            <file>file:/C:/Users/Santi/Documents/NetBeansProjects/Espotify-Web/EspotifyWEB/web/WEB-INF/Consultar%20Lista/JSPlistasGenero.jsp</file>
+            <file>file:/C:/Users/Santi/Documents/NetBeansProjects/Espotify-Web/EspotifyWEB/src/java/Servlets/DatosListaCliente.java</file>
+            <file>file:/C:/Users/Santi/Documents/NetBeansProjects/Espotify-Web/EspotifyWEB/src/java/Servlets/DatosListaGenero.java</file>
+            <file>file:/C:/Users/Santi/Documents/NetBeansProjects/Espotify-Web/EspotifyWEB/src/java/Servlets/TraerDatosConsultarLista.java</file>
+            <file>file:/C:/Users/Santi/Documents/NetBeansProjects/Espotify-Web/EspotifyWEB/src/java/Servlets/PublicarLista.java</file>
+            <file>file:/C:/Users/Santi/Documents/NetBeansProjects/Espotify-Web/EspotifyWEB/web/WEB-INF/Consultar%20Lista/JSPlistarListasGenero.jsp</file>
+            <file>file:/C:/Users/Santi/Documents/NetBeansProjects/Espotify-Web/EspotifyWEB/web/WEB-INF/Publicar%20lista/JSPpublicarLista.jsp</file>
         </group>
     </open-files>
 </project-private>

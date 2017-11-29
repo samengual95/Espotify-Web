@@ -61,6 +61,7 @@
                             <a href="cerrarSesion"><li>Cerrar sesion</li></a>
                         </ul>
                     </aside>
+                </section>
             </div>
         </header>
         <div class="container">
@@ -74,7 +75,7 @@
                 <tr> 
                     <td bgcolor="#ffffcc"> 
                         <font face="arial, verdana, helvetica"> 
-                        <% out.print(mensajeError); %>
+                        <% out.print(mensajeError);%>
                         </font> 
                     </td> 
                 </tr> 

@@ -1,12 +1,15 @@
 package Servlets;
 
 import clases.Fabrica;
+import clases.PorDefecto;
 import interfaz.Interfaz;
 import java.io.IOException;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -25,11 +28,21 @@ public class ConsultarListaGenero extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        // El JSP listar listas debe pasar a este servlet el nombre de la lista que se quiere consultar
-        Fabrica fabrica = Fabrica.getInstance();
-        Interfaz sistema = fabrica.getInterfaz();
-//        sistema.seleccionarListaReproduccion(nombreGenero, nombreLista);
+            response.setContentType("text/html;charset=UTF-8");
+            HttpSession session = request.getSession();
+        try {
+            // El JSP listar listas debe pasar a este servlet el nombre de la lista que se quiere consultar
+            String genero = (String) request.getParameter("consultarListaGenero");
+            // La siguiente linea es usada en el ultimo JSP para saber de que genero es la lista
+            session.setAttribute("generoSeleccionadoConsultarLista", genero);
+            Fabrica fabrica = Fabrica.getInstance();
+            Interfaz sistema = fabrica.getInterfaz();
+            List<PorDefecto> listas= sistema.listarListasGenero(genero);
+            session.setAttribute("listasReproduccion", listas);
+            request.getRequestDispatcher("/WEB-INF/Consultar Lista/JSPlistasGenero.jsp").forward(request, response);
+        } catch (NullPointerException e) {
+            request.getRequestDispatcher("/WEB-INF/Paginas de verificacion/JSPerror.jsp").forward(request, response);
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

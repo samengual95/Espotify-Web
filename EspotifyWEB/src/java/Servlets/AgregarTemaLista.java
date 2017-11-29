@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Servlets;
 
 import clases.Fabrica;
@@ -10,15 +5,13 @@ import dataType.DtCliente;
 import dataType.DtPertenece;
 import interfaz.Interfaz;
 import java.io.IOException;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-/**
- *
+/*
  * @author Leandro
  */
 
@@ -55,11 +48,14 @@ public class AgregarTemaLista extends HttpServlet {
             // Se llama a la funcion agregarTemaListaPersonalizada en el sistema
             sistema.agregarTemaListaPersonalizada(listaPropietario, ruta, Integer.parseInt(tema));
             // Se redirige a la pagina de que la operacion fue correcta que redirije al home
-            RequestDispatcher dispatcher = request.getRequestDispatcher("Home");
+            request.getRequestDispatcher("/WEB-INF/Paginas de verificacion/JSPcorrecto.jsp").forward(request,response);
         } catch(UnsupportedOperationException e){
             session.setAttribute("mensaje_error", e.getMessage());
             request.getRequestDispatcher("/WEB-INF/Agregar tema Lista/JSPagregarTemaListaAlbumError.jsp").forward(request,response);
-        } 
+        } catch (Exception  e){
+            session.setAttribute("mensaje_error", "El tema ya estaba agregado a la lista!");
+            request.getRequestDispatcher("/WEB-INF/Agregar tema Lista/JSPagregarTemaListaAlbumError.jsp").forward(request,response);
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
