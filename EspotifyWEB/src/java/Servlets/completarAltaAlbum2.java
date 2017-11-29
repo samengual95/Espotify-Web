@@ -5,16 +5,12 @@
  */
 package Servlets;
 
-import clases.Artista;
 import clases.Fabrica;
-import clases.Usuario;
-import dataType.DtAlbum;
 import dataType.DtArtista;
 import dataType.DtTema;
 import interfaz.Interfaz;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -42,12 +38,20 @@ public class completarAltaAlbum2 extends HttpServlet {
             String ubicacionTema = (String) request.getParameter("ubicacionTema");
             String nombreAl = (String) session.getAttribute("nombreAlbum");
             DtTema dtTema = new DtTema(null,nombreTema, Integer.parseInt(ubicacionTema), duracionTema, nombreAl, ar.getNombre());
-            ArrayList<DtTema> t = new ArrayList();
-            t.add(dtTema);
-            session.setAttribute("listaTemas", t);
-            request.getRequestDispatcher("/WEB-INF/Home/JSPagregarTemaAlbum.jsp").forward(request,response);
+            if (session.getAttribute("listaTemas") != null) {
+                ArrayList<DtTema> t = (ArrayList<DtTema>) session.getAttribute("listaTemas");
+                t.add(dtTema);
+                session.setAttribute("listaTemas", t);
+                request.getRequestDispatcher("/WEB-INF/AltaAlbum/JSPagregarTemaAlbum.jsp").forward(request,response);
+            }
+            else{
+                ArrayList<DtTema> t = new ArrayList();
+                t.add(dtTema);
+                session.setAttribute("listaTemas", t);
+                request.getRequestDispatcher("/WEB-INF/AltaAlbum/JSPagregarTemaAlbum.jsp").forward(request,response);
+            }
         } catch (NullPointerException e) {
-                    request.getRequestDispatcher("/WEB-INF/Home/JSPinicioErroneo.jsp").forward(request,response);
+                    request.getRequestDispatcher("/WEB-INF/Paginas de verificacion/JSPerrorArtista.jsp").forward(request,response);
         }
 
     }

@@ -310,14 +310,6 @@
         <url-pattern>/tipoFavorito</url-pattern>
     </servlet-mapping>
     <servlet>
-        <servlet-name>Servlet Completar alta album</servlet-name>
-        <servlet-class>Servlets.completarAltaAlbum</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>Servlet Completar alta album</servlet-name>
-        <url-pattern>/completarAltaAlbum</url-pattern>
-    </servlet-mapping>
-    <servlet>
         <servlet-name>Servlet Completar alta album2</servlet-name>
         <servlet-class>Servlets.completarAltaAlbum2</servlet-class>
     </servlet>

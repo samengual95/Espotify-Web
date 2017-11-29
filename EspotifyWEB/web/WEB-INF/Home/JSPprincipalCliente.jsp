@@ -81,7 +81,7 @@
                     <a href="direccionarDejarDeSeguirUsuario"><li>Dejar de seguir usuario</li></a>
                     <a href="direccionarGuardarEnFavoritos"><li>Guardar favoritos</li></a>
                     <a href="direccionarSeguirUsuario"><li>Seguir usuario</li></a>
-                    <a href="direccionarConsultarAlbum"><li>Consultar Album</li></a>
+                    <a href="consultaAlbumDir"><li>Consultar Album</li></a>
                     <a href="direccionarContratarSuscripcion"><li>Contratar Suscripcion</li></a>
                     <a href="direccionarActualizarSuscripcion"><li>Actualizar Suscripcion</li></a>
                 </ul> 

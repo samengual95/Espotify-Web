@@ -35,9 +35,9 @@ public class generosAlbum extends HttpServlet {
             ArrayList<String> g = new ArrayList();
             g.add(genero);
             session.setAttribute("generosAlbum", g);
-            request.getRequestDispatcher("/WEB-INF/AltaAlbum/JSPgenerosAlbum.jsp").forward(request,response);
+            request.getRequestDispatcher("/WEB-INF/AltaAlbum/JSPagregarTemaAlbum.jsp").forward(request,response);
         } catch (NullPointerException e) {
-                    request.getRequestDispatcher("/WEB-INF/Home/JSPinicioErroneo.jsp").forward(request,response);
+                    request.getRequestDispatcher("/WEB-INF/Paginas de verificacion/JSPerrorArtista.jsp").forward(request,response);
         }
 
     }
