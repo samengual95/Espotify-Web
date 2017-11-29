@@ -1,10 +1,9 @@
-<%@page import="dataType.DtArtista"%>
-<%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
+<%@page import="clases.Tema"%>
+<%@page import="clases.Album"%>
 <%@page import="java.util.Iterator"%>
+<%@page import="java.util.ArrayList"%>
 <%@page import="dataType.DtCliente"%>
-<%@page import="clases.Genero"%>
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,7 +12,7 @@
         <link rel="stylesheet" type="text/css" href="./../css/estilos.css" media="screen" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Alta Album</title>
+        <title>Crear lista</title>
         <style>
             header{
                 background: #2c3e50;
@@ -52,8 +51,10 @@
     <body>
         <header>
             <%
-                DtArtista u = (DtArtista) request.getSession().getAttribute("usuario_logueado");
+                DtCliente u = (DtCliente) request.getSession().getAttribute("usuario_logueado");
                 String nick = u.getNick();
+                Album al =(Album) request.getSession().getAttribute("al");
+                List<Tema> temas = (List<Tema>) request.getSession().getAttribute("temas");
                 // Se debera controlar el estado de suscripcion, de ser adecuado se seguira, de lo contrario se debera redirigir 
             %>
             <div class="container">
@@ -63,29 +64,37 @@
                     </aside>
                     <aside class="col-md-2">
                         <ul class="nodomenu">
-                            <a href="consultarPerfil"><li><% out.print(nick); %></li></a>
+                            <a href="consultarPerfil"><li> <% out.print(nick); %></li></a>
                             <a href="cerrarSesion"><li>Cerrar sesion</li></a>
                         </ul>
                     </aside>
             </div>
         </header>
         <div class="container">
-            <p><h2>Alta de album</h2><br></p>
-            <form action="completarAltaAlbum2" method="POST">
-                <p><input type="text" name="nombreTema" placeholder="Nombre del Tema"></p>
-                <p><input type="text" name="duracionTema" placeholder="Duracion del tema"></p>
-                <p><input type="text" name="ubicacionTema" placeholder="Ubicacion en el album"></p>
-                <input type="button" class="boton" value="AgregarTema" onclick="submit()">
-                <p>
+            <p><h2>Consulta de album</h2><br></p>
+            <p><h3>Datos de album</h3><br></p>
+            <form  method="POST">
+                <p>Nombre del album : <% out.print(al.getNombre()); %></p><br>
+                <p>Año de creacion : <% out.print(al.getAnioCreacion()); %></p><br>
+                <p>Nick de artista propietario : <% out.print(al.getPropietario().getNick()); %></p><br>
+                <h1>Temas</h1>
+                  <% Iterator<Tema> it = temas.iterator();
+                      Tema s;
+                      while (it.hasNext()) {
+                        s =  it.next();%>
+                        <p>Nombre : <% out.print(s.getNombre()); %></p><br>
+                        <p>Duracion : <% out.print(s.getDuracion()); %></p><br>
+                        <p>Numero de cacnion : <% out.print(s.getNumeroCancion()); %></p><br>
+                <%}%>
+                <br>
             </form>
-            <form action="completarAltaAlbum3" method="POST">
-                    <input type="button" class="boton" value="continuar" onclick="submit()"
-                </p>
-            </form>
+                <form action="Home">
+                    <input type="button" class="boton" value="Aceptar" onclick="submit()">
+                </form>
+            
         </div>
         <footer>
             <div class="container">
-                
             </div>
         </footer>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -93,3 +102,5 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
     </body>
 </html>
+
+

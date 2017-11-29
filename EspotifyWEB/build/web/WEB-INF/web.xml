@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
-    
-    
-    
-    <!-- Servlet registrarse -->
     <servlet>
         <servlet-name>Servlet Datos Lista Genero</servlet-name>
         <servlet-class>Servlets.DatosListaGenero</servlet-class>
@@ -308,14 +304,6 @@
     <servlet-mapping>
         <servlet-name>Servlet Tipo favorito</servlet-name>
         <url-pattern>/tipoFavorito</url-pattern>
-    </servlet-mapping>
-    <servlet>
-        <servlet-name>Servlet Completar alta album</servlet-name>
-        <servlet-class>Servlets.completarAltaAlbum</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>Servlet Completar alta album</servlet-name>
-        <url-pattern>/completarAltaAlbum</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>Servlet Completar alta album2</servlet-name>

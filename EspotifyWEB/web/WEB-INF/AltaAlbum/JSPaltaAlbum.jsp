@@ -77,6 +77,7 @@
                 <p>
                     <input type="button" class="boton" value="Continuar" onclick="submit()">
                 </p>
+            </form>
         </div>
         <footer>
             <div class="container">

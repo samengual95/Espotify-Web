@@ -5,11 +5,17 @@
  */
 package Servlets;
 
+import clases.Album;
+import clases.Artista;
 import clases.Fabrica;
-import dataType.DtArtista;
+import clases.Tema;
 import interfaz.Interfaz;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,26 +23,34 @@ import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author MaríaNoel
+ * @author Clara
  */
+public class ConsultaAlbum3 extends HttpServlet {
 
-public class completarAltaAlbum extends HttpServlet {
-
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try{
-   
+        try {
             HttpSession session = request.getSession();
-            Fabrica fabrica = Fabrica.getInstance();
-            Interfaz sistema = fabrica.getInterfaz();
-            DtArtista ar = (DtArtista) session.getAttribute("usuario_logueado");
-            request.getRequestDispatcher("/WEB-INF/Home/JSPagregarTemaAlbum.jsp").forward(request,response);
-            
-        } catch (NullPointerException e) {
-                    request.getRequestDispatcher("/WEB-INF/Home/JSPinicioErroneo.jsp").forward(request,response);
+            String album = (String) request.getParameter("Albumes");
+            Artista a = (Artista) session.getAttribute("art");
+            Album al = a.buscarAlbum(album);
+            session.setAttribute("al", al);
+            List<Tema> nuevo = al.darTemasAlbum();
+            session.setAttribute("temas", nuevo);
+            request.getRequestDispatcher("/WEB-INF/ConsultarAbum/JSPconsultarAlbumDatosAlbum.jsp").forward(request,response);
+        }catch (NullPointerException e) {
+                    request.getRequestDispatcher("/WEB-INF/Paginas de verificacion/JSPerror.jsp").forward(request,response);
         }
-
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

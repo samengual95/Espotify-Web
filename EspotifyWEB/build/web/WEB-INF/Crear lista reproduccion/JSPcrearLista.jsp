@@ -64,7 +64,7 @@
             </div>
         </header>
         <div class="container">
-            <p><h2>Agregue temas a sus listas de reproducción</h2><br></p>
+            <p><h2>Crear lista personlizada</h2><br></p>
             <form action="crearLista" method="POST">
                 <p><input type="text" name="nombreLista" placeholder="Nombre de lista" required></p>
                 <p><input type="file" name="foto"></p>
