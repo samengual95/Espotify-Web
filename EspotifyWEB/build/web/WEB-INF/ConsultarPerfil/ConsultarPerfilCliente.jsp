@@ -1,5 +1,10 @@
 <%@page import="dataType.DtCliente"%>
 <%@page import="clases.Cliente"%>
+<%@page import="clases.Sistema"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.Iterator"%>
+<%@page import="java.util.List"%>
+        
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -37,11 +42,96 @@
         <div class="container">
             <p><h2>Consultar Perfil</h2><br></p>
             <form method="POST">   
-                    <p>NICK: <% DtCliente variable = (DtCliente) request.getSession().getAttribute("usuario_logueado");
+                 <p>NICK: <% DtCliente variable = (DtCliente) request.getSession().getAttribute("usuario_logueado");
                 out.print(variable.getNick()); %> </p>
                 <p>NOMBRE: <% out.print(variable.getNombre()); %> </p>
                 <p>APELLIDO <% out.print(variable.getApellido()); %> </p>
                 <p>CORREO ELECTRONICO: <% out.print(variable.getEmail());%> </p>
+                <p>Seguidos:   
+                     <% ArrayList <String> Seguidos = (ArrayList <String>) request.getAttribute("Seguidos");
+                     Iterator <String> its = Seguidos.iterator();   
+                     if (its.hasNext()){    
+                          %> <select>  <%                        
+                            String n;
+                            while(its.hasNext()){ 
+                               n = its.next();
+                    %><option><% out.print(n);%></option><% 
+                            }
+                    %> </select>  <%                        
+                        }
+                        else{
+                          String s = "No sigues a nadie";
+                            out.print(s);         
+                          } %>
+                         </p>                        
+                        <p>Seguidores:
+                        <% ArrayList <String> Seguidores = (ArrayList <String>) request.getAttribute("Seguidores");
+                        Iterator <String> itss = Seguidores.iterator(); 
+                        if (itss.hasNext()){
+                             %> <select>  <%
+                        String n;
+                        while(itss.hasNext()){ 
+                            %> <option> <%                       
+                           n = itss.next();
+                           out.print(n);                                                     
+                         %> </option> <% } %>
+                             </select>  <% 
+                    } else{
+                        String n = "No tienes siguidores";
+                        out.print(n);
+                        }%>
+                        </p>
+                       <p>Temas Favoritos:   
+                     <% ArrayList <String> tfav = (ArrayList <String>) request.getAttribute("TemasFavoritos");
+                     Iterator <String> itt = tfav.iterator();   
+                     if (itt.hasNext()){    
+                          %> <select>  <%                        
+                            String n;
+                            while(itt.hasNext()){ 
+                               n = itt.next();
+                    %><option><% out.print(n);%></option><% 
+                            }
+                    %> </select>  <%                        
+                        }
+                        else{
+                          String s = "No tienes temas favoritos";
+                            out.print(s);         
+                          } %>
+                         </p>
+                         <p>Albums Favoritos:   
+                     <% ArrayList<String> afav = (ArrayList<String>) request.getAttribute("AlbumnesFavoritos");                    
+                     Iterator <String> ita = afav.iterator();   
+                     if (ita.hasNext()){    
+                          %> <select>  <%                        
+                            String n;
+                            while(ita.hasNext()){ 
+                               n = ita.next();
+                    %><option><% out.print(n);%></option><% 
+                            }
+                    %> </select>  <%                        
+                        }
+                        else{
+                          String s = "No tienes Album favoritos";
+                            out.print(s);         
+                          } %>
+                         </p>
+                         <p>Listas Favoritas:
+                         <% ArrayList <String> lfav = (ArrayList <String>) request.getAttribute("ListaFavoritos");                    
+                     Iterator <String> itl = lfav.iterator();   
+                     if (itl.hasNext()){    
+                          %> <select>  <%                        
+                            String n;
+                            while(itl.hasNext()){ 
+                               n = itl.next();
+                    %><option><% out.print(n);%></option><% 
+                            }
+                    %> </select>  <%                        
+                        }
+                        else{
+                          String s = "No tienes Album favoritos";
+                            out.print(s);         
+                          } %>
+                         </p>
             </form>
             <form action="Home" method="POST">
                 <input type="button" class="boton" value="Volver a inicio" onclick="submit()">

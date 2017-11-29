@@ -1,0 +1,20 @@
+SMAP
+ConsultarPerfilCliente_jsp.java
+JSP
+*S JSP
+*F
++ 0 ConsultarPerfilCliente.jsp
+WEB-INF/ConsultarPerfil/ConsultarPerfilCliente.jsp
+*L
+1,45:50
+45,2:95
+46:97
+47,4:98,3
+51,8:110
+58,6:118
+63:124
+64:125,3
+65,2:128
+66,2:130
+67,18:132
+*E

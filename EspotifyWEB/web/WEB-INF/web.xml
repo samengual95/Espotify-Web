@@ -5,6 +5,10 @@
         <servlet-name>Servlet Registrarse</servlet-name>
         <servlet-class>Servlets.Registrarse</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Buscar</servlet-name>
+        <servlet-class>Servlets.Buscar</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Servlet Registrarse</servlet-name>
         <url-pattern>/Registrarse</url-pattern>
@@ -324,6 +328,10 @@
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>
     </welcome-file-list>
+    <servlet-mapping>
+        <servlet-name>Buscar</servlet-name>
+        <url-pattern>/Buscar</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             5

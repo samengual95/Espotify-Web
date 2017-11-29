@@ -41,11 +41,13 @@
                         <p><input type="password" name="contra" placeholder="Contraseña" required></p>
                         <p><input type="password" name="contra1" placeholder="Confirmar contraseña" required></p>
                         <p><input type="date" name="fecha" required></p>
-                        <p><input type="file" name="foto"></p>
+                        <p><input type="file" name="foto" accept=".jpg"></p>
                         <p>
                             <input type="button" class="boton" value="Registrar" onclick="submit()">
                             <input type="reset" class="boton" value="Limpiar formulario">
-                        </p>
+                            
+                        </p>         
+                                              
                 </aside>
             </section>
         </div>

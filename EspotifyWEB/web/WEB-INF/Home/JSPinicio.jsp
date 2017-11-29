@@ -31,6 +31,14 @@
             <div class="container">
                 <h1>Espotify</h1>
             </div>
+             <div>
+                 <form action="Buscar" method="POST">
+                  <p>
+                      <input type="text" name="Buscar">
+                      <input type="button" class="boton" name="bBuscar" value="Buscar" onclick="submit()"> 
+                  </p>
+                 </form>
+            </div>
         </header>
         <div class="container">
             <section class="main row">

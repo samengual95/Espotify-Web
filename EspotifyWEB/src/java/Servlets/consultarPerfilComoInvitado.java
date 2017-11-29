@@ -47,10 +47,20 @@ public class consultarPerfilComoInvitado extends HttpServlet {
             if(it.hasNext()){
                 t = (String) it.next();
             }
-            if ( t.equals("Cliente"))
+            if ( t.equals("Cliente")){
+                Cliente c = (Cliente) variable;
+                request.setAttribute("ListaFavoritos", c.darListasFavoritas());
+                request.setAttribute("AlbumnesFavoritos", c.darAlbumesFavoritos());
+                request.setAttribute("TemasFavoritos", c.darTemasFavoritos());
+                request.setAttribute("Seguidos", c.darSeguidos());
+                request.setAttribute("Seguidores", c.darSeguidores());
                 request.getRequestDispatcher("/WEB-INF/ConsultarPerfil/ConsultarPerfilComoInvitadoCliente.jsp").forward(request,response);
-            else
+            }else{
+                Artista a = (Artista) variable;
+                request.setAttribute("AlbumnesPublicados", a.darAlbumesPublicados());
+                request.setAttribute("Seguidores", a.darSeguidores());
                 request.getRequestDispatcher("/WEB-INF/ConsultarPerfil/ConsultarPerfilComoInvitadoArtista.jsp").forward(request,response);
+            }
         }
         catch (NullPointerException e){
         }

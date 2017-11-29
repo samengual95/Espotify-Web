@@ -13,6 +13,7 @@ import clases.Usuario;
 import dataType.DtArtista;
 import dataType.DtCliente;
 import interfaz.Interfaz;
+import java.io.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -52,11 +53,15 @@ public class Completar_Registro extends HttpServlet {
         String apellido = request.getParameter("apellido");
         String url = request.getParameter("url");
         String biografia = request.getParameter("biografia");
-        String fecha = request.getParameter("fecha");
+        String fecha = request.getParameter("fecha");        
+        File origen= new File (request.getParameter("foto"));
+        
         EstadoSesion nuevoEstado = null;
         try {
             if(contra.equals(contra1)){
-                Interfaz sistema = Fabrica.getInstance().getInterfaz();                                
+                Interfaz sistema = Fabrica.getInstance().getInterfaz();
+                File destino = new File(sistema.getDestinoFoto() + nick + ".jpg");
+                sistema.copiarArchivo(destino.getAbsolutePath(), origen.getAbsolutePath());
                     if(session.getAttribute("tipo_usuario").equals("Artista")){
 //                        Artista ar = (Artista) session.getAttribute("usuario_logueado");
 //                        ar.setNombre(nombre);
@@ -64,7 +69,9 @@ public class Completar_Registro extends HttpServlet {
 //                        ar.setFechaNacimiento(fecha);
 //                        ar.setBiografia(biografia);
 //                        ar.setDirWeb(url);
-                        DtArtista art = new DtArtista(nick, nombre, apellido, mail, fecha, new ArrayList<String>(), biografia, url, new ArrayList<String>(), null, contra);
+                       
+                        //
+                        DtArtista art = new DtArtista(nick, nombre, apellido, mail, fecha, new ArrayList<String>(), biografia, url, new ArrayList<String>(), destino.getAbsolutePath(), contra);
                         sistema.altaPerfil(art);
                         session.setAttribute("usuario_logueado", art);
                         nuevoEstado = EstadoSesion.LOGIN_CORRECTO;  
@@ -74,7 +81,8 @@ public class Completar_Registro extends HttpServlet {
 //                        cl.setNombre(nombre);
 //                        cl.setApellido(apellido);
 //                        cl.setFechaNacimiento(fecha);
-                        DtCliente clien = new DtCliente(nick, nombre, apellido, mail, fecha, null, contra);
+                        //sistema.copiarArchivo(destino, origen);  
+                        DtCliente clien = new DtCliente(nick, nombre, apellido, mail, fecha, destino.getAbsolutePath(), contra);
                         sistema.altaPerfil(clien);
                         session.setAttribute("usuario_logueado", clien);
                         nuevoEstado = EstadoSesion.LOGIN_CORRECTO;                    }
@@ -89,6 +97,7 @@ public class Completar_Registro extends HttpServlet {
         dispatcher.forward(request, response);
         
     }
+
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

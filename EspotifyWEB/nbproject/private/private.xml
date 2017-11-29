@@ -12,7 +12,11 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/MaríaNoel/Desktop/Espotify-Web/Espotify-Web/EspotifyWEB/web/WEB-INF/AltaAlbum/JSPgenerosAlbum.jsp</file>
+            <file>file:/C:/Users/Pc/Documents/NetBeansProjects/Espotify-Web/EspotifyWEB/web/WEB-INF/Home/JSPregistroCliente.jsp</file>
+            <file>file:/C:/Users/Pc/Documents/NetBeansProjects/Espotify-Web/EspotifyWEB/src/java/Servlets/Buscar.java</file>
+            <file>file:/C:/Users/Pc/Documents/NetBeansProjects/Espotify-Web/EspotifyWEB/web/WEB-INF/Home/JSPregistroArtista.jsp</file>
+            <file>file:/C:/Users/Pc/Documents/NetBeansProjects/Espotify-Web/EspotifyWEB/web/WEB-INF/Home/JSPinicio.jsp</file>
+            <file>file:/C:/Users/Pc/Documents/NetBeansProjects/Espotify-Web/EspotifyWEB/src/java/Servlets/Completar_Registro.java</file>
         </group>
     </open-files>
 </project-private>

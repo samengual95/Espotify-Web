@@ -35,7 +35,7 @@
 
                 <aside class="col-md-6">
                     <p><h2>Completa el registro!</h2><br></p>
-                    <form action="Completar_Registro" method="POST">
+                    <form action="Completar_Registro" method="POST" >
                         <p><input type="text" name="nombre" placeholder="Nombre" required></p>
                         <p><input type="text" name="apellido" placeholder="Apellido" required></p>
                         <p><input type="password" name="contra" placeholder="Contraseña" required></p>
@@ -43,7 +43,7 @@
                         <p><input type="text" name="url" placeholder="Url de contacto" required></p>
                         <p><input type="text" name="biografia" placeholder="Biografia" required></p>
                         <p><input type="date" name="fecha" required></p>
-                        <p><input type="file" name="foto"></p>
+                        <p><input type="file" name="foto" accept=".jpg"></p>
                         <p>
                             <input type="button" class="boton" value="Registrar" onclick="submit()">
                             <input type="reset" class="boton" value="Limpiar formulario">

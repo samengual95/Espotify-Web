@@ -1,5 +1,10 @@
 <%@page import="dataType.DtArtista"%>
 <%@page import="clases.Artista"%>
+<%@page import="clases.Sistema"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.Iterator"%>
+<%@page import="java.util.List"%>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -45,6 +50,44 @@
                 <p>WEB: <%out.print(variable.getDireccionWeb());%></p>
                 <p>CORREO ELECTRONICO: <% out.print(variable.getEmail());%></p>
                 <p>BIOGRAFIA:</n><% out.print(variable.getBiografia());%></p>
+                <p>Albumns: <%
+                    ArrayList <String> alb = (ArrayList <String>) request.getAttribute("AlbumnesPublicados");
+                    Iterator ita = alb.iterator();
+                    if(ita.hasNext()){
+                        %><select><%
+                            String n;
+                            while (ita.hasNext()){
+                                n = (String) ita.next();
+                            %><option><%
+                                out.print(n);    
+                            %></option>><%
+                            }
+                        %></select><%
+                    }else{
+                            String r = "No tiene albumns publicados";
+                            out.print(r);  
+                        }
+                     %>              
+                </p>
+                <p>Seguidores: <%
+                    ArrayList <String> seg = (ArrayList <String>) request.getAttribute("Seguidores");
+                    Iterator its = seg.iterator();
+                    if(its.hasNext()){
+                        %><select><%
+                            String s;
+                            while (its.hasNext()){
+                                s = (String) its.next();
+                                %><option><%
+                                    out.print(s);    
+                                %></option>><%
+                            }
+                        %></select><%
+                    }else{
+                        String ret = "No tiene Seguidores";    
+                        out.print(ret);  
+                        }
+                    %>              
+                </p>
             </form>
             <form action="Home" method="POST">
                 <input type="button" class="boton" value="Volver a inicio" onclick="submit()">
