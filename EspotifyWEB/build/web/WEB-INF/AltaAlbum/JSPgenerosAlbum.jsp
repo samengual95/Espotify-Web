@@ -77,7 +77,7 @@
                 String s;
                 while(it.hasNext()){
                     s =(String) it.next(); %>
-                    <h2><input type="checkbox" name= "seleccionarGenero" value="<% s.toString(); %>"> <% out.print(s);%></h2></br> 
+                    <input type="checkbox" name= "seleccionarGenero" value="<% s.toString(); %>"> <% out.print(s);%></br> 
                  <%}%>
                 <p>
                     <input type="button" class="boton" value="Continuar" onclick="submit()">
